@@ -1,0 +1,15 @@
+﻿using BookingSystem.Domain.Enums
+
+namespace BookingSystem.Domain.Entities
+{
+    public class Property
+    {
+        public Guid Id { get; set; }
+        public Guid CompanyId { get; set; }
+
+        public string Name { get; set; } = string.Empty;
+        public PropertyType Type { get; set; }
+
+        public string Address { get; set; } = string.Empty;
+    }
+}
