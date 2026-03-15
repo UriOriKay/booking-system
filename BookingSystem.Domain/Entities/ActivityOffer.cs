@@ -2,9 +2,8 @@
 
 namespace BookingSystem.Domain.Entities
 {
-    public class ActivityOffer
+    public class ActivityOffer : BaseEntity
     {
-        public Guid Id { get; set; }
         public Guid PropertyId { get; set; }
 
         public string Name { get; set; } = string.Empty;
@@ -13,5 +12,8 @@ namespace BookingSystem.Domain.Entities
         public int MaxParticipants { get; set; }
         public DateTime StartUtc { get; set; }
         public DateTime EndUtc { get; set; }
+
+        public Property Property { get; set; } = null!;
+        public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
     }
 }

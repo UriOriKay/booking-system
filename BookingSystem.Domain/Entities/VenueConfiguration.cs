@@ -1,9 +1,8 @@
 ﻿namespace BookingSystem.Domain.Entities;
 
 
-public class VenueConfiguration
+public class VenueConfiguration : BaseEntity
 {
-    public Guid Id { get; set; }
     public Guid BookableUnitId { get; set; }
 
     public string Name { get; set; } = string.Empty;
@@ -11,4 +10,7 @@ public class VenueConfiguration
 
     public int SetupDurationHours { get; set; }
     public int TeardownDurationHours { get; set; }
+
+    public BookableUnit BookableUnit { get; set; } = null!;
+    public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 }

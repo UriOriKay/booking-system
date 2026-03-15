@@ -2,9 +2,8 @@
 
 namespace BookingSystem.Domain.Entities
 {
-    public class ServiceOffer
+    public class ServiceOffer : BaseEntity
     {
-        public Guid Id { get; set; }
         public Guid PropertyID { get; set; }
 
         public string Name { get; set; } = string.Empty;
@@ -12,5 +11,8 @@ namespace BookingSystem.Domain.Entities
 
         public int MaxCapacityPerSlot { get; set; }
         public int DefaultDurationMinutes { get; set; }
+
+        public Property Property { get; set; } = null!;
+        public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
     }
 }
